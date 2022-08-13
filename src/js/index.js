@@ -2,22 +2,22 @@ const menuItens = document.querySelectorAll('.menus')
 
 const goToSection = (event) => {
     const elementId = event.target.id
-        const toSection = document.querySelector(`${elementId}`).offsetTop
+    const toSection = document.querySelector(`${elementId}`).offsetTop
 
-        if (mobileScreen) {
-            window.scroll({
-                top: toSection,
-                behavior: "smooth",
-            })
-        } else {
-            window.scroll({
-                top: toSection,
-                behavior: "smooth",
-            });
-        }
+    if (mobileScreen) {
+        window.scroll({
+            top: toSection,
+            behavior: "smooth",
+        })
+    } else {
+        window.scroll({
+            top: toSection,
+            behavior: "smooth",
+        });
+    }
 
-        const itemSelected = document.getElementById(`${elementId}`)
-        itemSelected.classList.add('active')
+    const itemSelected = document.getElementById(`${elementId}`)
+    itemSelected.classList.add('active')
 }
 
 menuItens.forEach(item => {
@@ -102,26 +102,30 @@ window.addEventListener('scroll', function () {
 
 
 
-// const gallery = document.querySelectorAll('.photos img');
-// const modalPhotos = document.querySelector('.background-modal');
-// const photoContainer = document.querySelector('.container-imagem img')
-// const closerPhoto = document.querySelector('.container-imagem span')
+const gallery = document.querySelectorAll('.photos img');
+const modalPhotos = document.querySelector('.background-modal');
+const photoContainer = document.querySelector('.container-imagem img')
+const closerPhoto = document.querySelector('.container-imagem span')
 
-// gallery.forEach(photo => {
-//     photo.addEventListener('click', () => {
-//         let srcPhoto = photo.getAttribute('src');
+gallery.forEach(photo => {
+    photo.addEventListener('click', () => {
+        if (window.screen.width < 600) {
+            let srcPhoto = photo.getAttribute('src');
 
-//         modalPhotos.style.display = 'block';
-//         photoContainer.setAttribute('src', srcPhoto)
-//     });
-// });
+            modalPhotos.style.display = 'block';
+            photoContainer.setAttribute('src', srcPhoto)
+        } else {
+            alert('click e tela grande funcionando')
+        }
+    });
+});
 
-// function closeModal() {
-//     modalPhotos.style.display = 'none';
-// }
+function closeModal() {
+    modalPhotos.style.display = 'none';
+}
 
-// modalPhotos.addEventListener('click', closeModal);
-// closerPhoto.addEventListener('click', closeModal);
+modalPhotos.addEventListener('click', closeModal);
+closerPhoto.addEventListener('click', closeModal);
 
 
 
@@ -156,26 +160,29 @@ const smallPhotosContainer = document.querySelector('.manual-navigation')
 
 smallPhotos.forEach(photo => {
     photo.addEventListener('click', (element) => {
-        let photoSelected = element.target
-        let radioNumber = photoSelected.id.slice(3)
-        let marginSlide = radioNumber*10-10
-        let marginSmallContainer = radioNumber*120-470
-
-        firstPhoto.style.marginLeft = `-${marginSlide}%`
-
-        if (radioNumber <=3) {
-            smallPhotosContainer.style.marginLeft = '15px'
+        if (window.screen.width < 600) {
+            return
         } else {
-            smallPhotosContainer.style.marginLeft = `-${marginSmallContainer}px`
-        }
+            let photoSelected = element.target
+            let radioNumber = photoSelected.id.slice(3)
+            let marginSlide = radioNumber * 10 - 10
+            let marginSmallContainer = radioNumber * 120 - 470
 
-        let elementSelected = document.querySelector('.selected')
-        if (elementSelected != null) {
-            elementSelected.classList.remove('selected')
-        }
+            firstPhoto.style.marginLeft = `-${marginSlide}%`
 
-        photoSelected.classList.add('selected')
-        
+            if (radioNumber <= 3) {
+                smallPhotosContainer.style.marginLeft = '15px'
+            } else {
+                smallPhotosContainer.style.marginLeft = `-${marginSmallContainer}px`
+            }
+
+            let elementSelected = document.querySelector('.selected')
+            if (elementSelected != null) {
+                elementSelected.classList.remove('selected')
+            }
+
+            photoSelected.classList.add('selected')
+        }
     })
 });
 
