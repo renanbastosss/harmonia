@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 :root {
@@ -16,7 +18,6 @@
 body {
     background-color: var(--bg-principal);
     color: var(--color-principal);
-    font-family: 'Bebas Neue', cursive;
     font-size: 20px;
 }
 
@@ -27,12 +28,18 @@ body {
     align-items: center;
 }
 
+/* ------------------------- HEADER ------------------------- */
+
 header {
     background-color: #fff;
-    position: fixed;
+    position: fixed; 
     top: 0;
     right: 0;
     left: 0;
+    transition: 0.3s all ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 
 .header {
@@ -61,12 +68,12 @@ header {
 
 .header .menu nav ul .active {
     border-bottom: 2px solid var(--color-principal);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .header .menu nav ul li:hover {
     border-bottom: 2px solid var(--color-principal);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .header .login a {
@@ -79,6 +86,8 @@ header {
     border-bottom: 2px solid var(--color-principal);
 }
 
+/* ------------------------- HOME ------------------------- */
+
 .home {
     height: 100vh;
     display: flex;
@@ -86,8 +95,14 @@ header {
     align-items: center;
 }
 
+.home .banner img {
+    width: 350px;
+}
+
+/* ------------------------- SOBRE ------------------------- */
+
 .about {
-    background-image: url(../imagens/pop-e-diego-1.jpg);
+    background-image: url(../imagens/photo-8.jpg);
     background-repeat: no-repeat;
     background-position: center right;
     background-attachment: fixed;
@@ -98,7 +113,7 @@ header {
 }
 
 .info-about {
-    height: calc(100vh - 60px);
+    height: 100vh;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -115,66 +130,197 @@ header {
     text-align: justify;
 }
 
+/* ------------------------- PROFESSORES ------------------------- */
+
+.professores {
+    height: 100vh;
+}
+
+.professores-area {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.professores img {
+    width: 300px;
+}
+
+.professores .professor-infos {
+    width: 300px;
+    text-align: justify;
+}
+
+/* ------------------------- GALERIA ------------------------- */
+
 .gallery {
     flex-direction: column;
-    height: calc(100vh - 60px);
+}
+
+.gallery .slider {
+    margin: 0 auto;
+    width: 900px;
+    height: 100%;
     overflow: hidden;
 }
 
-.gallery h2 {
-    margin: 60px 0 30px;
+.gallery .slides {
+    width: 1000%;
+    height: 506px;
+    display: flex;
+    margin: 20px 0;
+
 }
 
-.gallery .sliders-photos {
-    display: flex;
-    width: 300vw;
-    margin-left: 200vw;
-    transition: 0.5s;
+/* .gallery .slides input {
+    display: none;
+} */
+
+.gallery .slide {
+    width: 10%;
+    height: 100%;
+    transition: 0.8s all ease;
 }
 
-.gallery .sliders-photos .slide {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+.gallery .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.gallery .photos {
+.gallery .manual-navigation {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
-    max-width: 650px;
+    margin: 0 15px;
+    overflow: hidden;
+    transition: 0.5s ease;
 }
 
-.gallery .photos img {
-    height: 150px;
-    width: 150px;
+.gallery .manual-navigation .manual-btn {
+    width: 110px;
+    height: 110px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
-.gallery .pointers {
+.gallery .manual-btn:hover {
+    transform: scale(1.05);
+}
+
+.gallery .manual-navigation .manual-btn img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.gallery .selected {
+    opacity: 0.5;
+}
+
+
+/* ------------------------- AULAS ------------------------- */
+
+.aulas-area {
     display: flex;
-    gap: 13px;
-    margin-top: 50px;
+    flex-direction: column;
 }
 
-.gallery .pointers .pointer {
-    border: 1px solid var(--color-principal);
-    border-radius: 5px;
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
+.aula {
+    display: flex;
+    margin-top: 30px;
+    width: 900px;
 }
 
-.gallery .pointers .pointer.selected {
-    background-color: var(--color-principal);
+.aula img {
+    width: 300px;
 }
+
+.aula .aula-infos {
+    flex: 1;
+    text-align: justify;
+    margin: 40px 50px;
+}
+
+.aula .aula-infos h2 {
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+/* ------------------------- HORÁRIOS ------------------------- */
+
+.horarios {
+    height: 100vh;
+    margin-top: 30px;
+}
+
+.horarios-area {
+    max-width: 1140px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.horarios h1 {
+    background-color: rgba(238, 238, 238, 0.822);
+    color: #777;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.horarios-area table {
+    width: 800px;
+    border: 2px solid #333;
+    border-collapse: collapse;
+    border-radius: 20px;
+
+    font-size: 15px;
+    margin-top: 20px;
+    }
+
+.horarios-area table td {
+    border: 1px solid #000;
+    width: 120px;
+    height: 60px;
+}
+
+.horarios-area table th {
+    height: 30px;
+    border: 1px solid #000;
+    background-color: #ccc;
+}
+
+.horarios-area span {
+    font-size: 12px;
+}
+
+.horarios-area tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.iniciante {
+    background-color: rgb(156, 156, 238);
+}
+
+.intermediario {
+    background-color: rgb(139, 255, 139);
+}
+
+.projeto-social {
+    background-color: rgb(255, 146, 146);
+}
+
+
+/* ------------------------- LOCALIZAÇÃO ------------------------- */
 
 .location {
-    height: calc(100vh - 64px);
+    height: 300px;
     display: flex;
 }
- 
+
 .location .map-responsive {
     width: 50%;
 }
@@ -206,6 +352,8 @@ header {
     font-size: 15px;
 }
 
+/* ------------------------- CONTATOS ------------------------- */
+
 .contacts-info {
     display: flex;
     flex-direction: column;
@@ -213,7 +361,7 @@ header {
     height: 400px;
 }
 
-.contacts .logo-footer img{
+.contacts .logo-footer img {
     width: 200px;
     margin-bottom: 15px;
 }
@@ -241,7 +389,9 @@ header {
     height: auto;
 }
 
-.modal-background {
+/* ------------------------- OUTROS ------------------------- */
+
+/* .modal-background {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
@@ -288,27 +438,8 @@ header {
     top: 0;
     left: 0;
     display: none;
-}
+} */
 
-.container-imagem {
-    position: fixed;
-    width: 500px;
-    left: calc(50% - 250px);
-    top: calc(50vh - 230px);
-}
-
-.container-imagem img {
-    width: 100%;
-}
-
-.container-imagem span {
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 3px;
-    right: 10px;
-    cursor: pointer;
-    color: #000;
-}
 
 .return-top {
     width: 40px;
