@@ -19,6 +19,7 @@ body {
     background-color: var(--bg-principal);
     color: var(--color-principal);
     font-size: 20px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -157,6 +158,10 @@ header {
     flex-direction: column;
 }
 
+.gallery .background-modal {
+    display: none;
+}
+
 .gallery .slider {
     margin: 0 auto;
     width: 900px;
@@ -171,10 +176,6 @@ header {
     margin: 20px 0;
 
 }
-
-/* .gallery .slides input {
-    display: none;
-} */
 
 .gallery .slide {
     width: 10%;

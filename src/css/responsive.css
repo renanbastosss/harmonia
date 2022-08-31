@@ -17,10 +17,10 @@
         right: 10px;
     }
 
-    .header .menu nav{
+    .header .menu nav {
         display: none;
     }
-    
+
     .header .menu nav ul {
         gap: 0;
         background-color: rgba(0, 0, 0, 0.8);
@@ -92,13 +92,37 @@
         text-align: justify;
     }
 
+    /* ------------------------- PROFESSORES ------------------------- */
 
-
-    .gallery {
+    .professores {
         height: auto;
     }
 
-    .gallery .photos {
+    .professores-area {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .professores img {
+        width: 300px;
+    }
+
+    .professores .professor-infos {
+        width: 300px;
+        text-align: justify;
+    }
+
+
+
+    .gallery {
+        /* height: auto; */
+    }
+
+    .gallery .slides {
+        display: none;
+    }
+
+    /* .gallery .photos {
         gap: 15px;
         max-width: 350px;
     }
@@ -110,6 +134,31 @@
 
     .gallery .pointers {
         margin: 40px 0 30px;
+    } */
+
+    .gallery .manual-navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: violet;
+        margin: 0;
+        width: 300px;
+        gap: 30px;
+    }
+
+    .gallery .manual-navigation .manual-btn {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 0px;
+    }
+
+    .gallery .manual-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .gallery .manual-navigation .manual-btn img {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
     }
 
 
